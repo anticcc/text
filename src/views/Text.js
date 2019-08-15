@@ -65,14 +65,20 @@ export default class Ha extends Component {
                                         a.splice(this.state.datalist.indexOf(item), 1)
                                         this.setState({
                                             datalist: a
+                                        }, () => {
+                                            if (this.state.datalist.length === 3) {
+                                                document.querySelector('#lzc').checked = true
+                                                console.log(1)
+
+                                            } else {
+                                                document.querySelector('#lzc').checked = false
+                                            }
+
+
                                         })
-                                        if (this.state.datalist.length === 3) {
-                                            document.querySelector('#lzc').checked = true
-                                        } else {
-                                            document.querySelector('#lzc').checked = false
-                                        }
 
                                         return
+
                                     }
 
 
